@@ -7,9 +7,9 @@ pipeline{
             }
         }
         
-        stage('Good Bye'){
+        stage('Verify Branch'){
             steps{
-               echo 'Good Bye World....' 
+               echo '$GIT_BRANCH' 
             }
         }
     }
