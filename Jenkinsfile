@@ -1,21 +1,17 @@
 pipeline{
     agent any    
-    stages{
-        stage ('Initialize') {
-            steps {
-               sh "mvn -version"
-                sh "mvn clean install"
-            }
-        }
-        stage('Hello'){
-            steps{
-               echo 'Hello World....' 
-            }
-        }
-        
+    stages{    
+              
         stage('Verify Branch'){
             steps{
                echo "$GIT_BRANCH" 
+            }
+        }
+        
+        stage ('Initialize') {
+            steps {
+               bat "mvn -version"
+                bat "mvn clean install"
             }
         }
     }
