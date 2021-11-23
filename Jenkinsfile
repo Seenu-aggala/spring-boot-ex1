@@ -16,7 +16,7 @@ pipeline{
         }
         stage ('Deploy') {
             steps {
-               bat '''copy C:\\Users\\dell\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\spring-boot-github\\target\\*.war F:\\Personal(Dont Delete)\\Softwares\\Java\\apache-tomcat-9.0.53\\webapps\\'''
+               bat '''copy C:\\Users\\dell\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\spring-boot-github\\target\\*.war E:\\db\\'''
             }
         }
     }
