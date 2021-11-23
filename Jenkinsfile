@@ -3,10 +3,8 @@ pipeline{
     stages{
         stage ('Initialize') {
             steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${MAVEN_HOME}"
-                '''
+               sh "mvn -version"
+                sh "mvn clean install"
             }
         }
         stage('Hello'){
@@ -21,4 +19,10 @@ pipeline{
             }
         }
     }
+    post {
+        always {
+            cleanWs();
+        }
+    }
+        
 }
